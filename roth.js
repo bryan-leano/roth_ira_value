@@ -1,6 +1,6 @@
 // How to calculate your Roth's value in the future
 
-var birthYear, retirementAge, annualAmount;
+var birthYear, retirementAge, annualAmount, totalAmount;
 
 document.querySelector('.btn-calculate').addEventListener('click', function() {
   birthYearInput = document.querySelector('.birth-year').value;
@@ -25,3 +25,10 @@ document.querySelector('.btn-calculate').addEventListener('click', function() {
     console.log('Please fill out the birth year, retirement age and annual amount!');
   }
 });
+
+function calculate() {
+  birthYearInput = retirementAgeInput - (2018 - birthYearInput);
+
+  totalAmount = annualAmountInput * Math.pow(1 + ( .06/12 ), ( 12 * birthYearInput ));
+  console.log(totalAmount);
+};
